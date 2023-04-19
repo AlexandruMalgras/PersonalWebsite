@@ -1,0 +1,30 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #19376D;
+    height: 9%;
+    color: white;
+}
+
+.footer-icons, .footer-pages {
+    display: flex;
+    justify-content: center;
+    margin: 0.5%;
+}
+
+.footer-page {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    margin-right: 1%;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    filter: invert(100%);
+}
