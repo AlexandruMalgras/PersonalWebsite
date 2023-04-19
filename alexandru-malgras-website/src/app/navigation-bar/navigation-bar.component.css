@@ -1,7 +1,7 @@
 .navigation-bar {
     display: flex;
     justify-content: flex-end;
-    background-color: #A4BC92;
+    background-color: #0B2447;
     height: 50px;
     width: 100%;
     position: fixed;
@@ -29,6 +29,6 @@
   
   .nav-item :hover, .active-link {
     background-color: white;
-    color: #A4BC92;
+    color: #0B2447;
   }
   

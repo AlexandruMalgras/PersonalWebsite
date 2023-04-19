@@ -1,1 +1,26 @@
-<p>contact works!</p>
+<main>
+    <div class="contact-page">
+        <div class="contact-details-container">
+            <p class="contact-title">Contact</p>
+            <p class="contact-detail">Name: Alexandru Malgras</p>
+            <p class="contact-detail">Phone number Netherlands: +31642133126</p>
+            <p class="contact-detail">Phone number Romania: +40739130671</p>
+            <p class="contact-detail">Email: alexandru_malgras@yahoo.com</p>
+        </div>
+        <hr class="contact-delimitation">
+        <div class="contact-form-container">
+            <form class="contact-form">
+                <p class="contact-form-title">Or send me an email directly</p>
+                <input type="text" class="contact-form-name" id="name" name="name" placeholder="Name" required>
+                <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="contact-form-email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" pattern="^\+\d{1,5}\d{9}$" class="contact-form-phone" id="phone" name="phone" placeholder="Phone number (+31642133126)" required>
+                <br>
+                <textarea id="message" class="contact-form-message" name="message" rows="10" placeholder="Write a message..." required></textarea>
+                <br>
+                <div class="contact-form-submit-container">
+                    <button class="contact-form-submit" type="submit">Send email</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+</main>
