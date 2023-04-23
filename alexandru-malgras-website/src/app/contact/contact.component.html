@@ -9,14 +9,63 @@
         </div>
         <hr class="contact-delimitation">
         <div class="contact-form-container">
-            <form class="contact-form">
+            <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="onSubmit()">
                 <p class="contact-form-title">Or send me an email directly</p>
-                <input type="text" class="contact-form-name" id="name" name="name" placeholder="Name" required>
-                <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="contact-form-email" id="email" name="email" placeholder="Email" required>
-                <input type="tel" pattern="^\+\d{1,5}\d{9}$" class="contact-form-phone" id="phone" name="phone" placeholder="Phone number (+31642133126)" required>
+                <div class="contact-form-name-email-phone-container">
+                    
+                    <div class="contact-form-name-container">
+                        <input type="text" formControlName="fromName" class="contact-form-name" id="name" name="name" placeholder="Name" required>
+                        <div class="contact-form-alert">
+                            <div *ngIf="contactForm.get('fromName')?.invalid && submitted" class="alert">
+                                <div *ngIf="contactForm.get('fromName')?.errors?.['required']">
+                                    Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-email-container">
+                        <input type="email" formControlName="fromEmail" class="contact-form-email" id="email" name="email" placeholder="Email" required>
+                        <div class="contact-form-alert">
+                            <div *ngIf="contactForm.get('fromEmail')?.invalid && submitted" class="alert">
+                                <div *ngIf="contactForm.get('fromEmail')?.errors?.['required']">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="contactForm.get('fromEmail')?.errors?.['pattern']">
+                                    Email must be a valid email address.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-phone-container">
+                        <input type="tel" formControlName="fromPhoneNumber" class="contact-form-phone" id="phone" name="phone" placeholder="Phone number (+31642133126)" required>
+                        <div class="contact-form-alert">
+                            <div *ngIf="contactForm.get('fromPhoneNumber')?.invalid && submitted" class="alert">
+                                <div *ngIf="contactForm.get('fromPhoneNumber')?.errors?.['required']">
+                                    Phone number is required.
+                                </div>
+                                <div *ngIf="contactForm.get('fromPhoneNumber')?.errors?.['pattern']">
+                                    Phone number must be in the format +xxxxxxxxxxx.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <br>
-                <textarea id="message" class="contact-form-message" name="message" rows="10" placeholder="Write a message..." required></textarea>
-                <br>
+
+                <div class="contact-form-message-container">
+                    <textarea id="message" formControlName="text" class="contact-form-message" name="message" rows="10" placeholder="Write a message..." required></textarea>
+                    <div class="contact-form-alert">
+                        <div *ngIf="contactForm.get('text')?.invalid && submitted" class="alert">
+                            <div *ngIf="contactForm.get('text')?.errors?.['required']">
+                                Message is required.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="contact-form-submit-container">
                     <button class="contact-form-submit" type="submit">Send email</button>
                 </div>
