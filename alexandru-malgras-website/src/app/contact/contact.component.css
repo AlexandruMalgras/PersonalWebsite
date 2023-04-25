@@ -1,5 +1,5 @@
 .contact-page {
-    margin-top: 5%;
+    margin-top: 8%;
     margin-left: 18%;
     margin-right: 18%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
@@ -114,4 +114,10 @@
 
 .contact-form-name::placeholder, .contact-form-email::placeholder, .contact-form-phone::placeholder, .contact-form-message::placeholder {
     color: white;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

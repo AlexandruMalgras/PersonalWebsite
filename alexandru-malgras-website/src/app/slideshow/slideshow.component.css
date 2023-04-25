@@ -1,0 +1,50 @@
+.slideshow {
+    width: 640px;
+    height: 360px;
+    position: relative;
+  }
+
+.slideshowImage {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.previousButton {
+background-color: rgba(11, 36, 71, 0.30);
+border: none;
+color:white;
+height: 32px;
+width: 32px;
+margin-right: 44%;
+margin-top: 160px;
+font-size: 20px;
+position: absolute;
+top: 0;
+left: 0;
+cursor: pointer;
+}
+
+.nextButton {
+background-color: rgba(11, 36, 71, 0.30);
+border: none;
+color:white;
+height: 32px;
+width: 32px;
+margin-left: 44%;
+margin-top: 160px;
+font-size: 20px;
+position: absolute;
+top: 0;
+right: 0;
+cursor: pointer;
+}
+
+.previousButton:hover, .nextButton:hover {
+    background-color: rgba(11, 36, 71, 0.5);
+}
+
+.previousButton:active, .nextButton:active {
+    background-color: rgba(11, 36, 71, 0.3);
+}

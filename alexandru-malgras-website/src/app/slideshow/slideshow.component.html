@@ -1,0 +1,9 @@
+<main>
+    <div class="slideshow">
+        <img class="slideshowImage" [src]="getCurrentImage().src" (click)="openImageViewer()">
+        <button (click)="prevImage()" class="previousButton">&lt;</button>
+        <button (click)="nextImage()" class="nextButton">&gt;</button>
+    </div>
+    
+    <app-image-viewer *ngIf="showViewer" [imageSrc]="getCurrentImage().src" (closeViewer)="hideViewer()"></app-image-viewer>
+</main>
