@@ -1,4 +1,7 @@
 <main>
+    <div class="notification">
+        <app-notification *ngIf="showNotification"  [notificationType]="notificationType" [notificationMessage]="notificationMessage"></app-notification>
+    </div>
     <div class="contact-page">
         <div class="contact-details-container">
             <p class="contact-title">Contact</p>

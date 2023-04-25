@@ -12,7 +12,11 @@ import { Validators } from '@angular/forms';
 
 export class ContactComponent {
   contactForm: FormGroup;
-  submitted: boolean = false;
+  submitted = false;
+  showNotification = false;
+
+  notificationType: string = '';
+  notificationMessage: string = '';
 
   constructor(private http: HttpClient) {
     this.contactForm = new FormGroup({
@@ -25,12 +29,22 @@ export class ContactComponent {
 
   onSubmit() {
     this.submitted = true;
-    this.sendEmail().subscribe(response => {
-      console.log('Email sent successfully!');
-      this.contactForm.reset();
-    }, error => {
-      console.error('Error sending email:', error);
-    });
+
+    if (this.contactForm.valid) {
+      this.sendEmail().subscribe(response => {
+        console.log('Email sent successfully!');
+        this.contactForm.reset();
+
+        this.setNotification('success', 'Email sent successfully!', true);
+      }, error => {
+        console.error('Error sending email:', error);
+
+        this.setNotification('fail', 'Failed sending the email.', true);
+      });
+    }
+    else {
+      this.setNotification('fail', 'Form is invalid.', true);
+    }
   }
 
   sendEmail() {
@@ -45,5 +59,16 @@ export class ContactComponent {
     };
 
     return this.http.post(url, jsonString, httpOptions);
+  }
+
+  setNotification(type: string, message: string, isVisible: boolean)
+  {
+    this.notificationType = type;
+    this.notificationMessage = message;
+    this.showNotification = isVisible;
+
+    setTimeout(() => {
+      this.showNotification = false;
+    }, 5000);
   }
 }

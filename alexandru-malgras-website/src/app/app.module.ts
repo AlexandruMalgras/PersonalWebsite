@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     ContactComponent,
     FooterComponent,
     SlideshowComponent,
-    ImageViewerComponent
+    ImageViewerComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
