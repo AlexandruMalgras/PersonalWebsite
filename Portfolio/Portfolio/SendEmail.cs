@@ -33,10 +33,10 @@ namespace Portfolio
             var request = new RestRequest();
             request.AddParameter("domain", DOMAIN, ParameterType.UrlSegment);
             request.Resource = $"{DOMAIN}/messages";
-            request.AddParameter("from", $"{fromName} <alexandrumalgras@gmail.com>");
+            request.AddParameter("from", $"Mailer <alexandrumalgras@gmail.com>");
             request.AddParameter("to", toEmail);
             request.AddParameter("subject", subject);
-            request.AddParameter("text", $"{text}\nPhone Number: {fromPhoneNumber}\nEmail: {fromEmail}");
+            request.AddParameter("text", $"{text} \n Phone Number: {fromPhoneNumber} \n Email: {fromEmail}\n Name: {fromName}");
             request.Method = Method.Post;
             return await restClient.ExecuteAsync(request);
         }
