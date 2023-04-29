@@ -1,11 +1,19 @@
-<nav>
-  <div class="navigation-bar">
-    <div class="nav-items">
-      <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item">Home</a>
-      <a routerLink="/projects" routerLinkActive="active-link" class="nav-item">Projects</a>
-      <a routerLink="/resume" routerLinkActive="active-link" class="nav-item">Resume</a>
-      <a routerLink="/about" routerLinkActive="active-link" class="nav-item">About</a>
-      <a routerLink="/contact" routerLinkActive="active-link" class="nav-item">Contact</a>
-    </div>
-  </div> 
-</nav>     
+<div class="navigation-bar">
+  <div class="nav-toggle">
+    <i class="material-icons" (click)="toggleMenu()">{{ isMenuOpen ? "close" : "menu" }}</i>
+  </div>
+  <div class="nav-items">
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item">Home</a>
+    <a routerLink="/projects" routerLinkActive="active-link" class="nav-item">Projects</a>
+    <a routerLink="/resume" routerLinkActive="active-link" class="nav-item">Resume</a>
+    <a routerLink="/about" routerLinkActive="active-link" class="nav-item">About</a>
+    <a routerLink="/contact" routerLinkActive="active-link" class="nav-item">Contact</a>
+  </div>
+</div>
+<div [ngClass]="isMenuOpen ? 'nav-items-open' : 'nav-items-closed'">
+  <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-item-small" id="nav-item-small-first">Home</a>
+  <a routerLink="/projects" routerLinkActive="active-link" class="nav-item-small">Projects</a>
+  <a routerLink="/resume" routerLinkActive="active-link" class="nav-item-small">Resume</a>
+  <a routerLink="/about" routerLinkActive="active-link" class="nav-item-small">About</a>
+  <a routerLink="/contact" routerLinkActive="active-link" class="nav-item-small" id="nav-item-small-last">Contact</a>
+</div> 

@@ -1,94 +1,93 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header>
+    <app-navigation-bar></app-navigation-bar>
+</header>
 <main>
-    <div class="about">
-        <div class="about-container">
-            <div class="about-description">
-                <p class="about-title">About</p>
-                <div class="about-text">
-                    <p>
-                        Hi! I am Alexandru Malgras. 
-                        I graduated from Fontys University of Applied Sciences in Eindhoven, The Netherlands with a degree in software engineering in February 2023.
-                        I am <span>{{yearsPassed}}</span> years old, Romanian-French, passioned about technology.
-                    </p>
-                    <br>
-                    <p>
-                        During my studies, I mainly focused on backend development but I also have some experience with frontend development.
-                        I explored different programming areas such as cyber security, game design, and pursued a minor in embedded systems (arduino development).
-                        Overall, I find application development to be the most enjoyable area of programming.
-                    </p>
-                </div>
-            </div>
-            <div class="about-image">
-
+    <div class="container">
+        <div class="about-description">
+            <p class="about-title">About</p>
+            <div class="about-text">
+                <p>
+                    Hi! I am Alexandru Malgras. 
+                    I graduated from Fontys University of Applied Sciences in Eindhoven, The Netherlands with a degree in software engineering in February 2023.
+                    I am <span>{{yearsPassed}}</span> years old, Romanian-French, passioned about technology.
+                </p>
+                <br>
+                <p>
+                    During my studies, I mainly focused on backend development but I also have some experience with frontend development.
+                    Besides the main programme, I explored different programming areas such as cyber security, game design, and pursued a minor in embedded systems (arduino development).
+                    Overall, I find application development to be the most enjoyable area of programming.
+                </p>
             </div>
         </div>
-        <div class="skills-container">
-            <div class="skills-image"></div>
+        <div class="about-image"></div>
+    </div>
 
-            <div class="skills-description">
-                <p class="skills-title">Skills</p>
-                <div class="skills-buttons">
-                    <button id="backend-btn" (click)="setActive(1)" class="skill-button" [ngClass]="{'skill-button-on': active === 1}">Backend</button>
-                    <button id="database-btn" (click)="setActive(2)" class="skill-button" [ngClass]="{'skill-button-on': active === 2}">Databases</button>
-                    <button id="frontend-btn" (click)="setActive(3)" class="skill-button" [ngClass]="{'skill-button-on': active === 3}">Frontend</button>
-                    <button id="soft-btn" (click)="setActive(4)" class="skill-button" [ngClass]="{'skill-button-on': active === 4}">Soft</button>
-                </div>
+    <div class="container">
+        <div class="skills-image"></div>
 
-                <div id="backend-description" class="hide" [ngClass]="{'skill-description-container': active === 1}">
-                    <span class="skill-category">Programming Languages</span>
-                    <p class="skill-description">C#, Java, C++ (Arduino)</p>
-                    <span class="skill-category">Frameworks</span>
-                    <p class="skill-description">.Net Core, .Net WCF, .Net WinForms, .Net WPF</p>
-                    <span class="skill-category">Development environments</span>
-                    <p class="skill-description">Visual Studio / Code, Intellij IDEA</p>
-                    <p class="skill-description">Arduino IDE, Unity 3D</p>
-                    <span class="skill-category">Others</span>
-                    <p class="skill-description">Design Patterns, Unit Testing (MSTest), Debugging</p>
-                    <p class="skill-description">LINQ, Git, REST API, Docker, UML, Postman, Wireshark</p>
-                    <p class="skill-description">Object oriented programming, Secure programming</p>
-                </div>
+        <div class="skills-description">
+            <p class="skills-title">Skills</p>
+            <div class="skills-buttons">
+                <button id="backend-btn" (click)="setActive(1)" class="skill-button" [ngClass]="{'skill-button-on': active === 1}">Backend</button>
+                <button id="database-btn" (click)="setActive(2)" class="skill-button" [ngClass]="{'skill-button-on': active === 2}">Databases</button>
+                <button id="frontend-btn" (click)="setActive(3)" class="skill-button" [ngClass]="{'skill-button-on': active === 3}">Frontend</button>
+                <button id="soft-btn" (click)="setActive(4)" class="skill-button" [ngClass]="{'skill-button-on': active === 4}">Soft</button>
+            </div>
 
-                <div id="databases-description" class="hide" [ngClass]="{'skill-description-container': active === 2}">
-                    <span class="skill-category">Programming Languages</span>
-                    <p class="skill-description">SQL, PLSQL</p>
-                    <span class="skill-category">Cloud</span>
-                    <p class="skill-description">Amazon Web Services, Azure, Google</p>
-                    <span class="skill-category">Relational databases</span>
-                    <p class="skill-description">MySQL, Oracle DB</p>
-                    <span class="skill-category">Non-relational databases</span>
-                    <p class="skill-description">Elasticsearch, Cosmos DB, Firebase</p>
-                </div>
+            <div id="backend-description" class="hide" [ngClass]="{'skill-description-container': active === 1}">
+                <span class="skill-category">Programming Languages</span>
+                <p class="skill-description">C#, Java, C++ (Arduino)</p>
+                <span class="skill-category">Frameworks</span>
+                <p class="skill-description">.Net Core, .Net WCF, .Net WinForms, .Net WPF</p>
+                <span class="skill-category">Development environments</span>
+                <p class="skill-description">Visual Studio / Code, Intellij IDEA</p>
+                <p class="skill-description">Arduino IDE, Unity 3D</p>
+                <span class="skill-category">Others</span>
+                <p class="skill-description">Design Patterns, Unit Testing (MSTest), Debugging</p>
+                <p class="skill-description">LINQ, Git, REST API, Docker, UML, Postman, Wireshark</p>
+                <p class="skill-description">Object oriented programming, Secure programming</p>
+            </div>
 
-                <div id="frontend-description" class="hide" [ngClass]="{'skill-description-container': active === 3}">
-                    <span class="skill-category">Programming Languages</span>
-                    <p class="skill-description">HTML, CSS, JavaScript, TypeScript, XAML, C#</p>
-                    <span class="skill-category">Frameworks</span>
-                    <p class="skill-description">Angular</p>
-                    <p class="skill-description">.Net WinForms, .Net WPF</p>
-                    <span class="skill-category">Others</span>
-                    <p class="skill-description">User interface design</p>
-                </div>
+            <div id="databases-description" class="hide" [ngClass]="{'skill-description-container': active === 2}">
+                <span class="skill-category">Programming Languages</span>
+                <p class="skill-description">SQL, PLSQL</p>
+                <span class="skill-category">Cloud</span>
+                <p class="skill-description">Amazon Web Services, Azure, Google</p>
+                <span class="skill-category">Relational databases</span>
+                <p class="skill-description">MySQL, Oracle DB</p>
+                <span class="skill-category">Non-relational databases</span>
+                <p class="skill-description">Elasticsearch, Cosmos DB, Firebase</p>
+            </div>
 
-                <div id="soft-description" class="hide" [ngClass]="{'skill-description-container': active === 4}">
-                    <span class="skill-category">Languages</span>
-                    <p class="skill-description">Romanian (native), English (fluent)</p>
-                    <p class="skill-description">French (Great at understanding / working on speaking)</p>
-                    <span class="skill-category">Teamwork</span>
-                    <p class="skill-description">Cooperation, Feedback reception/provision</p>
-                    <span class="skill-category">Communication</span>
-                    <p class="skill-description">Verbal, Presenting</p>
-                    <p class="skill-description">Documentation</p>
-                    <span class="skill-category">Problem-solving</span>
-                    <p class="skill-description">Understanding requirements, Decision-making</p>
-                    <p class="skill-description">Analytical thinking</p>
-                </div>
+            <div id="frontend-description" class="hide" [ngClass]="{'skill-description-container': active === 3}">
+                <span class="skill-category">Programming Languages</span>
+                <p class="skill-description">HTML, CSS, JavaScript, TypeScript, XAML, C#</p>
+                <span class="skill-category">Frameworks</span>
+                <p class="skill-description">Angular</p>
+                <p class="skill-description">.Net WinForms, .Net WPF</p>
+                <span class="skill-category">Others</span>
+                <p class="skill-description">User interface design</p>
+            </div>
+
+            <div id="soft-description" class="hide" [ngClass]="{'skill-description-container': active === 4}">
+                <span class="skill-category">Languages</span>
+                <p class="skill-description">Romanian (native), English (fluent)</p>
+                <p class="skill-description">French (Great at understanding / working on speaking)</p>
+                <span class="skill-category">Teamwork</span>
+                <p class="skill-description">Cooperation, Feedback reception/provision</p>
+                <span class="skill-category">Communication</span>
+                <p class="skill-description">Verbal, Presenting</p>
+                <p class="skill-description">Documentation</p>
+                <span class="skill-category">Problem-solving</span>
+                <p class="skill-description">Understanding requirements, Decision-making</p>
+                <p class="skill-description">Analytical thinking</p>
             </div>
         </div>
     </div>
 </main>
 <footer>
-    <div class="footer">
-      <app-footer></app-footer>
-    </div>
+    <app-footer></app-footer>
 </footer>
   
   

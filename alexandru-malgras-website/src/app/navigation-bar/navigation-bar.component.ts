@@ -8,5 +8,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class NavigationBarComponent {
+  isMenuOpen = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

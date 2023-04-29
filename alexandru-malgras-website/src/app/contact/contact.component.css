@@ -1,15 +1,25 @@
-.notification {
+header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+app-navigation-bar {
+    width: 100%;
+}
+
+.notification-container {
     display: flex;
     justify-content: center;
 }
 
 .contact-page {
-    margin-top: 8%;
-    margin-left: 18%;
-    margin-right: 18%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
+    width: 55%;
+    margin: 10vh auto;
+    min-height: 500px;
 }
 
 .contact-details-container {
@@ -29,16 +39,16 @@
     margin-right: 2%;
 }
 
+.contact-form-title {
+    font-size: 2vw;
+    color: var(--DarkBlue);
+    text-align: center;
+}
+
 .contact-form-container {
     margin-left: 10%;
     margin-top: 2%;
     margin-right: 10%;
-}
-
-.contact-form-title {
-    font-size: 32px;
-    color: var(--DarkBlue);
-    text-align: center;
 }
 
 .contact-form-name-email-phone-container {
@@ -50,14 +60,9 @@
 }
 
 .contact-form-name-container, .contact-form-email-container, .contact-form-phone-container {
-    width: 33%;
+    width: 100%;
     margin-left: 1%;
     margin-right: 1%;
-}
-
-.contact-form-message-container {
-    margin-top: -1%;
-    width: 100%;
 }
 
 .contact-form-name, .contact-form-email, .contact-form-phone {
@@ -65,19 +70,14 @@
     border-color: var(--LighterBlue);
     color: white;
     width: 100%;
-    font-size: 1em;
+    font-size: 0.9vw;
     height: 4vh;
-    padding-left: 1%;
+    min-height: 25px;
 }
 
-.contact-form-alert {
-    height: 2vh;
+.contact-form-message-container {
+    margin-top: -1%;
     width: 100%;
-}
-
-.alert {
-    color: red;
-    font-size: 14px;
 }
 
 .contact-form-message {
@@ -85,8 +85,11 @@
     background-color: var(--Blue);
     border-color: #576CBC;
     color: white;
-    font-size: 1.4em;
-    padding-left: 1%;
+    font-size: 0.9vw;
+}
+
+.contact-form-name::placeholder, .contact-form-email::placeholder, .contact-form-phone::placeholder, .contact-form-message::placeholder {
+    color: white;
 }
 
 .contact-form-submit-container {
@@ -100,12 +103,14 @@
     background-color: var(--Blue);
     border: none;
     border-radius: 8px;
-    width: 12%;
     font-size: 1em;
     height: 4vh;
+    min-height: 30px;
     cursor: pointer;
     text-align: center;
-    margin-bottom: 0.5%;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    padding: 1vh 2vw;
 }
   
 .contact-form-submit:hover {
@@ -117,12 +122,60 @@
     background-color: var(--Blue);
 }
 
-.contact-form-name::placeholder, .contact-form-email::placeholder, .contact-form-phone::placeholder, .contact-form-message::placeholder {
-    color: white;
+.contact-form-alert {
+    height: 2vh;
+    min-height: 10px;
+    width: 100%;
 }
 
-.footer {
+.alert {
+    color: red;
+    font-size: 14px;
+}
+
+app-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .contact-page {
+        min-width: 80%;
+    }
+
+    .contact-detail {
+        font-size: 4vw;
+    }
+
+    .contact-form-title {
+        font-size: 6vw;
+    }
+
+    .contact-form-name-email-phone-container {
+        flex-direction: column;
+        margin-top: 1vh;
+    }
+
+    .contact-form-name, .contact-form-email, .contact-form-phone {
+        font-size: 4vw;
+    }
+
+    .contact-form-name-container, .contact-form-email-container, .contact-form-phone-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .contact-form-message {
+        font-size: 4vw;
+    }
+
+    app-footer {
+        position: relative;
+    }
+
+    .alert {
+        font-size: 4vw;
+    }
 }

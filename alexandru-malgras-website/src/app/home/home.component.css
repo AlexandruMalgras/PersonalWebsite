@@ -1,23 +1,33 @@
-.home-container {   
-    height: 500px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 200px;
-    min-width: 800px;
-    margin-left: 21%;
-    margin-right: 21%;
+header {
     display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+app-navigation-bar {
+    width: 100%;
+}
+
+.home-container {   
+    height: 50vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    padding: 3vh;
+    margin: 15vh auto;
+    width: 60%
 }
 
 .home-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 60px;
+    padding-right: 2vh;
 }
 
 .home-text-name {
     color: var(--Blue);
-    font-size: 60px;
+    font-size: 4vw;
     width: 100%;
     border-right: 5px;
     white-space: nowrap;
@@ -28,7 +38,7 @@
 .home-text-type {
     display: block;
     color: var(--LighterBlue);
-    font-size: 45px;
+    font-size: 3vw;
 }
 
 @keyframes cursor {
@@ -40,15 +50,57 @@
 }
 
 .home-picture-container {
-    transform: scale(0.5);
-    transform-origin: top;
-    margin-top: 50px;
-    position: absolute;
-    margin-left: 420px;
+    display: flex;
+    padding-left: 2vh;
 }
 
-.footer {
+
+.home-picture-container img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+app-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
 }
+
+@media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+      height: auto;
+      width: 70%
+    }
+
+    .home-text-container {
+        padding-right: 0vh;
+    }
+  
+    .home-text-name {  
+      text-align: center;
+      font-size: 7vw;
+    }
+  
+    .home-text-type {
+      text-align: center;
+      font-size: 5vw;
+    }
+  
+    .home-picture-container {
+      width: 50vw;
+      margin: 1rem auto;
+      background-color: black;
+      padding-left: 0;
+    }
+
+    .home-picture-container img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+  }

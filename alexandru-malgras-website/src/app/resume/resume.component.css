@@ -1,5 +1,14 @@
+header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+app-navigation-bar {
+    width: 100%;
+}
+
 .resume-container {
-    margin-top: 50px;
     height: 86.4vh;
 }
 

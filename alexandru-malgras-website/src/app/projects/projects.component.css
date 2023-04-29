@@ -1,20 +1,33 @@
+header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+app-navigation-bar {
+    width: 100%;
+}
+
 .ProjectContainer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
-    margin-left: 14%;
-    margin-right: 14%;
-    margin-top: 5%;
-    height: 415px;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ProjectDescription {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    width: 44%;
-    margin-right: 1.5%;
-    margin-top: 2%;
-    height: 332px;
-    padding: 1%;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
 }
 
 .ProjectDescriptionTitle {
@@ -33,20 +46,35 @@
 }
 
 .ProjectMedia {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    margin-left: 1.5%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 640px;
+    width: 70%;
     height: 360px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 .ProjectVideo {
-    width: 640px;
-    height: 360px;
+    width: 100%;
+    height: 100%;
 }
 
-.footer {
+app-footer {
     position: relative;
-    margin-top: 60px;
+    top: 20px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .ProjectContainer {
+        width: 90%;
+    }
+
+    .ProjectDescription {
+        width: 85%;
+    }
+
+    .ProjectMedia {
+        width: 90%;
+    }
 }
