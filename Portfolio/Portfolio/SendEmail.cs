@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using Portfolio.Configuration;
 using Portfolio.Interfaces;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -9,15 +10,22 @@ namespace Portfolio
 {
     public class SendEmail : IMailer
     {
-        private const string BASE_URL = @"https://api.mailgun.net/v3";
-        private const string API_KEY = @"46e98a68dc7693a9e7ea77cffb9521bd-181449aa-19a0128f";
-        private const string DOMAIN = @"sandboxff745ea952ba4a0cab92f49493ad32ad.mailgun.org";
+        private MailgunConfig mailgunConfig;
+        private string BASE_URL;
+        private string API_KEY;
+        private string DOMAIN;
 
         private readonly IHttpClientFactory httpClientFactory;
 
         public SendEmail(IHttpClientFactory httpClientFactory)
         {
             this.httpClientFactory = httpClientFactory;
+
+            this.mailgunConfig = MailgunConfig.Instance;
+
+            this.BASE_URL = mailgunConfig.BaseURL;
+            this.API_KEY = mailgunConfig.ApiKey;
+            this.DOMAIN = mailgunConfig.Domain;
         }
 
         public async Task<RestResponse> SendEmailAsync(string fromName, string fromEmail, string fromPhoneNumber, string toEmail, string subject, string text)

@@ -48,7 +48,7 @@ export class ContactComponent {
   }
 
   sendEmail() {
-    const url = 'http://localhost:5000/Email';
+    const url = '/Email';
     let jsonString = JSON.stringify(this.contactForm.value);
     
     const httpOptions = {
