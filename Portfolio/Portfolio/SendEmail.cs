@@ -11,9 +11,6 @@ namespace Portfolio
     public class SendEmail : IMailer
     {
         private MailgunConfig mailgunConfig;
-        private string BASE_URL;
-        private string API_KEY;
-        private string DOMAIN;
 
         private readonly IHttpClientFactory httpClientFactory;
 
@@ -22,25 +19,21 @@ namespace Portfolio
             this.httpClientFactory = httpClientFactory;
 
             this.mailgunConfig = MailgunConfig.Instance;
-
-            this.BASE_URL = mailgunConfig.BaseURL;
-            this.API_KEY = mailgunConfig.ApiKey;
-            this.DOMAIN = mailgunConfig.Domain;
         }
 
         public async Task<RestResponse> SendEmailAsync(string fromName, string fromEmail, string fromPhoneNumber, string toEmail, string subject, string text)
         {
             using var httpClient = httpClientFactory.CreateClient();
-            httpClient.BaseAddress = new Uri(BASE_URL);
+            httpClient.BaseAddress = new Uri(mailgunConfig.BaseURL);
 
             using var restClient = new RestClient(httpClient, options: new RestClientOptions
             {
-                Authenticator = new HttpBasicAuthenticator("api", API_KEY)
+                Authenticator = new HttpBasicAuthenticator("api", mailgunConfig.ApiKey)
             });
 
             var request = new RestRequest();
-            request.AddParameter("domain", DOMAIN, ParameterType.UrlSegment);
-            request.Resource = $"{DOMAIN}/messages";
+            request.AddParameter("domain", mailgunConfig.Domain, ParameterType.UrlSegment);
+            request.Resource = $"{mailgunConfig.Domain}/messages";
             request.AddParameter("from", $"Mailer <alexandrumalgras@gmail.com>");
             request.AddParameter("to", toEmail);
             request.AddParameter("subject", subject);
